@@ -310,8 +310,10 @@ class MarkdownReader(BaseReader):
         for extension in settings['extension_configs'].keys():
             if extension not in settings['extensions']:
                 settings['extensions'].append(extension)
+        """
         if 'markdown.extensions.meta' not in settings['extensions']:
             settings['extensions'].append('markdown.extensions.meta')
+        """
         self._source_path = None
 
     def _parse_metadata(self, meta):
