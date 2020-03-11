@@ -398,8 +398,10 @@ class Content(object):
         if self.settings['SUMMARY_MAX_LENGTH'] is None:
             return self.content
 
+        excerpt_link = '<a href="{}">[&hellip;]</a>'.format("/" + self.url)
         return truncate_html_words(self.content,
-                                   self.settings['SUMMARY_MAX_LENGTH'])
+                                   self.settings['SUMMARY_MAX_LENGTH'],
+                                   excerpt_link)
 
     @property
     def summary(self):
